@@ -21,7 +21,7 @@
     <!--<va-breadcrumbs slot="header" style="background-color: #3588C1 !important;"></va-breadcrumbs>-->
     <va-aside slot="aside"></va-aside>
     <va-footer slot="footer" :menu="footerMenu" style="background-color: #3588C1 !important; color: #fff !important">
-      &copy; 2020,
+      &copy; 2021,
       <v-icon size="18"> mdi-xml </v-icon>
       with
       <v-icon size="18" style="color: red"> mdi-heart </v-icon>
