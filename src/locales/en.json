@@ -4,6 +4,7 @@
     "fr": "French"
   },
   "routes": {
+    "calendar": "Calendar",
     "home": "Home",
     "login": "Login",
     "forgot_password": "Forgot password",
@@ -45,7 +46,8 @@
   "menu": {
     "login": "Login",
     "profile": "Profile",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "calendar": "Calendar"
   },
   "resources": {
     "users": {

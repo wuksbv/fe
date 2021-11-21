@@ -1,6 +1,8 @@
 <template>
   <div>
+    <v-alert type="success">v-alert</v-alert>
     <v-row>
+      
       <v-col cols="12" lg="4">
         <base-material-chart-card
           :data="emailsSubscriptionChart.data"
@@ -474,3 +476,8 @@ export default {
   },
 };
 </script>
+<style>
+.container--fluid{
+  background-color: #3588C1 !important;
+}
+</style>

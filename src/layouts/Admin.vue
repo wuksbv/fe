@@ -9,22 +9,24 @@
       @toggle="
         $vuetify.breakpoint.lgAndUp ? (mini = !mini) : (drawer = !drawer)
       "
+      style="background-color: #193D53 !important"
     ></va-app-bar>
     <va-sidebar
       slot="sidebar"
       :menu="sidebarMenu"
       v-model="drawer"
       :mini-variant="mini"
+      color="#193D53"
     ></va-sidebar>
-    <va-breadcrumbs slot="header"></va-breadcrumbs>
+    <!--<va-breadcrumbs slot="header" style="background-color: #3588C1 !important;"></va-breadcrumbs>-->
     <va-aside slot="aside"></va-aside>
-    <va-footer slot="footer" :menu="footerMenu">
+    <va-footer slot="footer" :menu="footerMenu" style="background-color: #3588C1 !important; color: #fff !important">
       &copy; 2020,
       <v-icon size="18"> mdi-xml </v-icon>
       with
-      <v-icon size="18"> mdi-heart </v-icon>
+      <v-icon size="18" style="color: red"> mdi-heart </v-icon>
       by
-      <a href="https://www.company.com">My Awesome Company</a> for a better web.
+      <a href="#">WUKS</a> the Perfect Match.
     </va-footer>
   </va-layout>
 </template>
@@ -64,3 +66,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+
+.v-list-item--link::before, .v-breadcrumbs{
+  color: #fff !important;
+}
+</style>

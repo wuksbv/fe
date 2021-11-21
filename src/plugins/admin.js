@@ -35,7 +35,7 @@ export default new VuetifyAdmin({
   router,
   store,
   i18n,
-  title: "Vuetify Admin",
+  title: "WUKS",
   routes,
   locales: {
     en,

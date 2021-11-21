@@ -1,6 +1,7 @@
 import Vue from "vue";
 import AdminLayout from "@/layouts/Admin";
 import Dashboard from "@/views/Dashboard";
+import Calendar from "@/views/Calendar";
 import Error from "@/views/Error";
 import i18n from "@/i18n";
 
@@ -22,6 +23,14 @@ export default {
       component: Dashboard,
       meta: {
         title: i18n.t("routes.dashboard"),
+      },
+    },
+    {
+      path: "/calendar",
+      name: "calendar",
+      component: Calendar,
+      meta: {
+        title: i18n.t("routes.calendar"),
       },
     },
     {
