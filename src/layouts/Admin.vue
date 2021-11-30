@@ -1,5 +1,16 @@
 <template>
+<div>
+  <v-app-bar app light>
+  <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+  <v-avatar :tile="true">
+    <img :src="require('@/assets/logo.png')" alt="logo">
+  </v-avatar>
+  <v-toolbar-title>Header text</v-toolbar-title>
+</v-app-bar>
+
   <va-layout>
+    
+
     <va-app-bar
       slot="app-bar"
       :header-menu="headerMenu"
@@ -29,6 +40,7 @@
       <a href="#">WUKS</a> the Perfect Match.
     </va-footer>
   </va-layout>
+  </div>
 </template>
 
 <script>

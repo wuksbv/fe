@@ -21,7 +21,8 @@ Vue.use(VuetifyAdmin);
 /**
  * Axios instance
  */
-const baseURL = process.env.VUE_APP_API_URL || "http://localhost:3000";
+// const baseURL = process.env.VUE_APP_API_URL || "http://localhost:3000";
+const baseURL = process.env.VUE_APP_API_URL || "https://wuksapi3.herokuapp.com/api";
 
 const http = axios.create({
   baseURL,
