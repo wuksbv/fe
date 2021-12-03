@@ -12,7 +12,8 @@
     "register": "Register",
     "profile": "Profile",
     "dashboard": "Dashboard",
-    "not_found": "Not found"
+    "not_found": "Not found",
+    "notes": "Notes"
   },
   "auth": {
     "username": "Username",
@@ -47,7 +48,8 @@
     "login": "Login",
     "profile": "Profile",
     "dashboard": "Dashboard",
-    "calendar": "Calendar"
+    "calendar": "Calendar",
+    "notes": "Notes"
   },
   "resources": {
     "users": {

@@ -10,8 +10,6 @@ import "./plugins/base";
 import "./plugins/chartist";
 import "./sass/overrides.sass";
 
-Vue.config.productionTip = false;
-
 new Vue({
   router,
   store,
