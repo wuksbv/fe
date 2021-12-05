@@ -8669,6 +8669,11 @@
   dependencies:
     "sortablejs" "1.10.2"
 
+"vuelidate@^0.7.6":
+  "integrity" "sha512-suzIuet1jGcyZ4oUSW8J27R2tNrJ9cIfklAh63EbAkFjE380iv97BAiIeolRYoB9bF9usBXCu4BxftWN1Dkn3g=="
+  "resolved" "https://registry.npmjs.org/vuelidate/-/vuelidate-0.7.6.tgz"
+  "version" "0.7.6"
+
 "vuetify-admin@^0.5.0":
   "integrity" "sha1-lIeiq/W4VOGxvzJzgKEir5aeOAY="
   "resolved" "https://registry.npm.taobao.org/vuetify-admin/download/vuetify-admin-0.5.7.tgz"

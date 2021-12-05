@@ -6,6 +6,7 @@
     ref="notes"
     >
 
+
    <v-row class="fill-height">
     <v-col>
       <v-sheet height="64">
@@ -13,6 +14,7 @@
           flat
         >
         <v-btn
+            small 
             outlined
             class="mr-4"
             color="grey darken-2"
@@ -22,14 +24,25 @@
           </v-btn>
         <v-btn v-for="(itemType, i) in itemTypes"
                 :key="i.title"
-                outlined
+                small
+                
             class="mr-4"
             :color="itemType.color"
             @click="showNotes(itemType.title)"
           
                 >{{getBtnTitle(itemType.title)}}</v-btn>
 
-        
+        <v-btn
+            outlined
+            small             
+            class="mr-4"
+            color="grey darken-2"
+            @click="dialog = true"          
+            >
+            <v-icon left>
+        mdi-plus
+      </v-icon> new
+          </v-btn>
          
           
         </v-toolbar>
@@ -38,79 +51,47 @@
         </v-row>
 
           <v-spacer></v-spacer>
-        <v-row>
-            <v-col
+        <v-row v-if="theseNotes.length > 0">
+            <v-col            
                 v-for="(note, i) in theseNotes"
                 :key="i"
                 cols="12"
-                >
-                
-                 <v-card
-            :color="note.color"
-            dark
-          >
-            <div  class="d-flex flex-no-wrap justify-space-between">
-              <div>
-                <v-card-title
-                  class="text-h3"
-                  v-text="note.title"
-                ></v-card-title>
+                >           
 
-                <v-card-text v-text="note.details"></v-card-text>
-
-                <v-card-actions>
-                  <v-btn
-                    v-if="note.artist === 'Ellie Goulding'"
-                    class="ml-2 mt-3"
-                    fab
-                    icon
-                    height="40px"
-                    right
-                    width="40px"
-                  >
-                    <v-icon>mdi-play</v-icon>
-                  </v-btn>
-
-                  <v-btn
-                    v-else
-                    class="ml-2 mt-5"
-                    outlined
-                    rounded
-                    small
-                  >
-                    START RADIO
-                  </v-btn>
-                </v-card-actions>
-              </div>
-
-              <v-avatar
-                class="ma-3"
-                size="125"
-                tile
-              >
-                <v-img :src="note.src"></v-img>
-              </v-avatar>
-            </div>
-          </v-card>
-
-          <NoteCard>
+          <NoteCard :note="note" />
 
             </v-col>
-
+        </v-row>
+        <v-row v-else>
+          <p class="pl-5">No notes available.</p>
         </v-row>
 
 
   </base-material-card>
+  <!--  dialog -->
+    <v-dialog
+      v-model="dialog"
+      persistent
+      max-width="500"
+    >
+     <v-card class="pl-5 pr-5 pb-5 ">
+     <NewNote />
+     </v-card>
+      
+    </v-dialog>
   </div>
 </template>
 <script>
 const user_id = 'e7ed1def-3405-47fa-8c8a-fcc85526be46' // mark [admin]
 import NoteCard from "@/components/notes/NoteCard";
+import NewNote from "@/components/forms/NewNote";
 export default {    
   components: {
+    NewNote,
     NoteCard
   },
     data: () => ({
+      dialog: false,
         loading: true,
         itemType: 'all',
         itemTypes: [],
@@ -169,7 +150,7 @@ export default {
                    })
                 })
                 this.loading = false
-                console.log(tnotes)
+               // console.log(tnotes)
           })
           .catch((error) => {
             // console.log(error);
@@ -198,7 +179,7 @@ export default {
                    })
                 })
                 this.loading = false
-                console.log(ttypes)
+               // console.log(ttypes)
           })
           .catch((error) => {
             // console.log(error);
@@ -222,7 +203,7 @@ export default {
         }
         this.notesTitle = 'Notes | ' + type
         this.theseNotes = tnotes
-        console.log(this.theseNotes)
+        //console.log(this.theseNotes)
       },
       getColor(itemType){
         let color = ""
